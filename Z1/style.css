@@ -4,7 +4,7 @@
 
 .container {
     margin: auto;
-    width: 80%
+    width: 80%;
 }
 
 .row {
@@ -77,4 +77,21 @@ h3 {
 input.invalid {
     border-color: red;
     color: black;
+}
+
+@media (max-width: 600px) {
+
+    .container {
+    display: grid;
+    width: 100%;
+    }
+
+    .column.half-column {
+    width: 100%;
+    }
+
+    .column {
+    padding: 0.1rem;
+    }
+
 }
