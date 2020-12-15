@@ -82,10 +82,39 @@ function validateNumber(number) {
 }
 
 function validateRadio(radio) {
-    // todo
 
-    return true;
-}
+    const input = document.querySelector("input[name='favouriteNumber']")
+
+    const labels = document.querySelectorAll("label[class='radio-label']")
+    let arrayLabels = Array.from(labels)
+    const nameMessage = document.getElementById("radio-input-message");
+
+    if (radio) {
+        input.className = "";
+
+        if (nameMessage) {
+             nameMessage.style.color = "black";
+             nameMessage.parentElement.removeChild(nameMessage);
+             }
+
+    } else {
+
+        if (!nameMessage) {
+            const small = document.createElement("small");
+            small.id = "radio-input-message";
+            small.className = "invalid";
+            small.innerText = "\nProszę zaznaczyć jeden z elementów Radio";
+            input.parentElement.appendChild(small);
+
+            for (let i =0; i < arrayLabels.length; i++) {
+                arrayLabels[i].className = "invalid"
+                }
+            }
+            }
+
+    }
+
+
 
 function validatePassword(password) {
     // regex do hasła: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/
