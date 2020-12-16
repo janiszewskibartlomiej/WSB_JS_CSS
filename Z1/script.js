@@ -85,6 +85,8 @@ function validateRadio(radio) {
 
     const input = document.querySelector("input[name='favouriteNumber']")
 
+    let nameMessage = document.getElementById("radio-input-message");
+
     if (radio) {
         input.className = "";
 
@@ -114,14 +116,15 @@ function validateRadio(radio) {
 
 function validatePassword(password) {
 
-    const valid = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/.test(password);
+    const valid = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d\W]{8,}$/.test(password);
 
     const input = document.querySelector("input[name='password']");
+
 
     if (valid) {
 
         input.className = "";
-        cons nameMessage = document.getElementById("password-input-message");
+        const nameMessage = document.getElementById("password-input-message");
 
         if (nameMessage) {
             nameMessage.parentElement.removeChild(nameMessage);
@@ -144,11 +147,13 @@ function validatePassword(password) {
 
 function validateRepeatedPassword(password, repeatedPassword) {
 
+    const valid = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d\W]{8,}$/.test(repeatedPassword);
+
     const input = document.querySelector("input[name='password2']");
 
-    if (repeatedPassword && password === repeatedPassword) {
-        input.className = "";
+    if (password === valid) {
 
+        input.className = "";
         const nameMessage = document.getElementById("password2-input-message");
 
         if (nameMessage) {
@@ -167,5 +172,5 @@ function validateRepeatedPassword(password, repeatedPassword) {
         }
     }
 
-    return repeatedPassword;
+    return valid;
 }
