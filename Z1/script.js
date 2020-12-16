@@ -85,10 +85,6 @@ function validateRadio(radio) {
 
     const input = document.querySelector("input[name='favouriteNumber']")
 
-    const labels = document.querySelectorAll("label[class='radio-label']")
-    let arrayLabels = Array.from(labels)
-    const nameMessage = document.getElementById("radio-input-message");
-
     if (radio) {
         input.className = "";
 
