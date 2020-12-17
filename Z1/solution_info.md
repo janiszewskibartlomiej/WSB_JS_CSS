@@ -1,5 +1,4 @@
-- [ ] Zadanie 1:
-
+- [x] Zadanie 1:
 
 * Wprowadź walidację do formularza (4pkt):
   * Pole „Numer” powinno mieć maksymalnie dwie cyfry po
@@ -10,13 +9,13 @@
   małą literę (1pkt)
   * Pole „Powtórz hasło” powinno mieć taką samą wartość, jak
   pole „Hasło” (1pkt)
-  * Dodaj klasę, która będzie dodawana do elementów
+* Dodaj klasę, która będzie dodawana do elementów
   formularza w przypadku błędów walidacji (2pkt)
-  * Dodaj komunikaty, które będą informowały użytkownika
+* Dodaj komunikaty, które będą informowały użytkownika
   o błędach walidacji (2pkt)
-  * Obsłuż usuwanie komunikatów i oznaczeń w przypadku
+* Obsłuż usuwanie komunikatów i oznaczeń w przypadku
   powtórnej walidacji (2pkt)
-  * Gdy formularz jest wypełniony poprawnie, dodajemy
+* Gdy formularz jest wypełniony poprawnie, dodajemy
   obiekt do elementów wyświetlanych na stronie (jak do tej
   pory).
 
