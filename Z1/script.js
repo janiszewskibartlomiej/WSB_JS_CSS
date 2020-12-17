@@ -147,11 +147,9 @@ function validatePassword(password) {
 
 function validateRepeatedPassword(password, repeatedPassword) {
 
-    const valid = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d\W]{8,}$/.test(repeatedPassword);
-
     const input = document.querySelector("input[name='password2']");
 
-    if (password === valid) {
+    if (repeatedPassword && password === repeatedPassword) {
 
         input.className = "";
         const nameMessage = document.getElementById("password2-input-message");
@@ -159,6 +157,7 @@ function validateRepeatedPassword(password, repeatedPassword) {
         if (nameMessage) {
             nameMessage.parentElement.removeChild(nameMessage);
         }
+        return repeatedPassword
     } else {
         input.className = "invalid";
 
@@ -172,5 +171,4 @@ function validateRepeatedPassword(password, repeatedPassword) {
         }
     }
 
-    return valid;
 }
