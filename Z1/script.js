@@ -157,7 +157,7 @@ function validateRepeatedPassword(password, repeatedPassword) {
         if (nameMessage) {
             nameMessage.parentElement.removeChild(nameMessage);
         }
-        return repeatedPassword
+        return repeatedPassword;
     } else {
         input.className = "invalid";
 
@@ -169,6 +169,7 @@ function validateRepeatedPassword(password, repeatedPassword) {
 
             input.parentElement.appendChild(small);
         }
+        return false;
     }
 
 }
