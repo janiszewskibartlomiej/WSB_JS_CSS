@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css"/>
+    <script src="script.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=Array.prototype.find"></script>
+</head>
+<body>
+
+<div class="container">
+
+    <div class="row">
+        <button onclick="task1()">ZADANIE 1</button>
+        <button onclick="task2()">ZADANIE 2</button>
+        <button onclick="task3()">ZADANIE 3</button>
+        <button onclick="task4()">ZADANIE 4</button>
+        <button onclick="task5()">ZADANIE 5</button>
+        <button onclick="task6()">ZADANIE 6</button>
+        <button onclick="task7()">ZADANIE 7</button>
+        <button onclick="task8()">ZADANIE 8</button>
+
+        <button onclick="task9()">ZADANIE 9</button>
+    </div>
+
+    <table>
+        <tr>
+            <td>
+                TASK1
+                <div id="task1"></div>
+
+            </td>
+            <td>
+                TASK2
+                <div id="task2"></div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                TASK3
+                <div id="task3">TEKST DO USUNIĘCIA</div>
+            </td>
+            <td>
+                TASK4
+                <div id="task4">
+                    TEN TEKST MA ZOSTAC
+                    <span id="span-to-remove" class="border-violet half-column">SPAN DO USUNIĘCIA</span>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                TASK5
+                <div id="task5">
+                    <input name="task5-input"/>
+                    <div id="task5-value"></div>
+                </div>
+            </td>
+            <td>
+                TASK6
+                <div id="task6" class="red-color">
+                    CHCĘ BYC ZIELONY
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                TASK7
+                <div id="task7" class="red-color">
+                    ZMIENIAM KOLORY
+                </div>
+            </td>
+            <td>
+                TASK9
+                <div id="task9"
+                     onmouseenter="mouseIn()"
+                     onmouseleave="mouseOut()">
+                </div>
+            </td>
+        </tr>
+
+
+    </table>
+</div>
+
+
+</body>
+</html>
+
+
+
