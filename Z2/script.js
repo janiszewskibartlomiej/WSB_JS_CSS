@@ -2,61 +2,59 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
     const dogType = document.getElementById("dog_type");
 
-    const amount = document.getElementById("amount");
+    const breed = document.getElementById("breed");
 
     axios.get("https://dog.ceo/api/breeds/list").then(response => {
-        response.message.forEach(c => {
+        response.data.message.forEach(c => {
             const option = createOption(c);
             dogType.append(option);
         })
     });
-    [1, 2, 3, 4, 5].forEach(c => {
-        const option = createNumberOption(c);
-        amount.append(option)
-    })
-});
+    axios.get("https://dog.ceo/api/breed/hound/list").then(response => {
+        response.data.message.forEach(c => {
+            const option = createOption(c);
+            breed.append(option)
+        })
+    });
 
-function createOption(val) {
-    const option = document.createElement("option");
-    option.value = val;
-    option.innerText = val;
-    return option;
-}
+    function createOption(val) {
+        const option = document.createElement("option");
+        option.value = val;
+        option.innerText = val;
+        return option;
+    }
 
-function createNumberOption(list) {
-    const option = document.createElement("option");
-    option.value = list;
-    option.innerText = list;
-    return option;
-}
 
-function createImage(src) {
-    const image = document.createElement("img");
-    image.src = src;
+    function createImage(src) {
+        const image = document.createElement("img");
+        image.src = src;
 
-    return image;
-}
+        return image;
+    }
 
-function createJokeDiv(joke) {
-    const div = document.createElement("div");
-    div.innerText = joke;
-    return div;
-}
+    function createDiv(txt) {
+        const div = document.createElement("div");
+        div.innerText = txt;
+        return div;
+    }
 
-function generateJoke() {
+    function addImg() {
 
-    const category = document.getElementById("categories").value;
-    const jokeDiv = document.getElementById("joke-div");
+        const dog = document.getElementById("dog_type").value;
+        const imgDiv = document.getElementById("img-div");
 
-    jokeDiv.innerHTML = "";
+        imgDiv.innerHTML = "";
 
-    axios.get(`https://api.chucknorris.io/jokes/random?category=${category}`).then(response => {
+        let string = `https://dog.ceo/api/breed/${dog}/images/random`
 
-        const image = createImage(response.data.icon_url);
-        const joke = createJokeDiv(response.data.value);
+        axios.get(string).then(response => {
+            console.log(response)
+            const image = createImage(response.data.message);
+            const txt = createDiv(response);
 
-        jokeDiv.append(image);
-        jokeDiv.append(joke);
-    })
-}
+            imgDiv.append(image);
+            imgDiv.append(txt);
+        })
+    }
+})
 
